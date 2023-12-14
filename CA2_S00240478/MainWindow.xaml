@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="55,159,481,73"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="386,159,150,73"/>
+        <Label Content="Tiddlywinks World Cup" FontSize="30" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top"/>
+        <Label Content="Teams" HorizontalAlignment="Left" Margin="55,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Players" HorizontalAlignment="Left" Margin="386,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Record Result" HorizontalAlignment="Left" Margin="690,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="16.399,4.277"/>
+        <Button Content="Win" Width="60" HorizontalAlignment="Left" Margin="701,277,0,0" VerticalAlignment="Top"/>
+        <Button Content="Loss" Width="60" HorizontalAlignment="Left" Margin="701,313,0,0" VerticalAlignment="Top"/>
+        <Button Content="Draw" Width="60" HorizontalAlignment="Left" Margin="701,349,0,0" VerticalAlignment="Top"/>
+        <Label Content="Player Rating" HorizontalAlignment="Left" Margin="691,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="16.399,4.277"/>
+        <Image HorizontalAlignment="Left" Height="37" Margin="682,159,0,0" VerticalAlignment="Top" Width="30" Source="/starsolid.png"/>
+        <Image HorizontalAlignment="Left" Height="37" Margin="717,159,0,0" VerticalAlignment="Top" Width="30" Source="/starsolid.png"/>
+        <Image HorizontalAlignment="Left" Height="37" Margin="752,159,0,0" VerticalAlignment="Top" Width="30" Source="/staroutline.png"/>
     </Grid>
 </Window>
