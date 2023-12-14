@@ -58,7 +58,8 @@ namespace CA2_S00240478
             Teams.Add(t3);
 
             // Added teams to team listbox
-            lbxTeams.ItemsSource = Teams;        
+            Teams.Sort();
+            lbxTeams.ItemsSource = Teams;
         }
 
         private void lbxTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -88,6 +89,8 @@ namespace CA2_S00240478
 
                 lbxTeams.ItemsSource = null;
                 lbxTeams.ItemsSource = Teams;
+                Teams.Sort();
+
                 lbxTeams.SelectedItem = selectedTeam;
             }
         }

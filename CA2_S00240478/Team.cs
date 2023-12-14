@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace CA2_S00240478
 {
-    internal class Team
+    internal class Team : IComparable<Team>
     {
         public string Name { get; set; }
         public List<Player> Players { get; set; }
@@ -29,6 +29,12 @@ namespace CA2_S00240478
         public override string ToString()
         {
             return $"{Name} - {Points}";
+        }
+
+        public int CompareTo(Team other)
+        {
+            if (other == null) return 1;
+            return other.Points.CompareTo(this.Points);
         }
     }
 }
