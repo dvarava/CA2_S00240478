@@ -11,9 +11,30 @@ namespace CA2_S00240478
         public string Name { get; set; }
         public string ResultRecord { get; set; }
 
+        public int Points
+        {
+            get
+            {
+                int points = 0;
+
+                foreach (char result in ResultRecord)
+                {
+                    if (result == 'W')
+                    {
+                        points += 3;
+                    }
+                    else if (result == 'D')
+                    {
+                        points += 1;
+                    }
+                }
+                return points;
+            }
+        }
+
         public override string ToString()
         {
-            return $"{Name} - {ResultRecord}";
+            return $"{Name} - {ResultRecord} - {Points}";
         }
     }
 }
