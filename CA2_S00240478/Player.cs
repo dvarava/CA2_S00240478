@@ -10,5 +10,10 @@ namespace CA2_S00240478
     {
         public string Name { get; set; }
         public string ResultRecord { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} - {ResultRecord}";
+        }
     }
 }
