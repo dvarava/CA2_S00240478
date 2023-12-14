@@ -17,9 +17,9 @@
         <Label Content="Teams" HorizontalAlignment="Left" Margin="55,128,0,0" VerticalAlignment="Top"/>
         <Label Content="Players" HorizontalAlignment="Left" Margin="74,128,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label Content="Record Result" HorizontalAlignment="Left" Margin="378,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="16.399,4.277" Grid.Column="1"/>
-        <Button Content="Win" Width="60" HorizontalAlignment="Left" Margin="389,277,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button Content="Loss" Width="60" HorizontalAlignment="Left" Margin="389,313,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button Content="Draw" Width="60" HorizontalAlignment="Left" Margin="389,349,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="btnWin" Content="Win" Width="60" HorizontalAlignment="Left" Margin="389,277,0,0" VerticalAlignment="Top" Grid.Column="1" Click="btnWin_Click"/>
+        <Button x:Name="btnLoss" Content="Loss" Width="60" HorizontalAlignment="Left" Margin="389,313,0,0" VerticalAlignment="Top" Grid.Column="1" Click="btnLoss_Click"/>
+        <Button x:Name="btnDraw" Content="Draw" Width="60" HorizontalAlignment="Left" Margin="389,349,0,0" VerticalAlignment="Top" Grid.Column="1" Click="btnDraw_Click"/>
         <Label Content="Player Rating" HorizontalAlignment="Left" Margin="379,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="16.399,4.277" Grid.Column="1"/>
         <Image HorizontalAlignment="Left" Height="33" Margin="366,154,0,0" VerticalAlignment="Top" Width="36" Source="images/starsolid.png" Grid.Column="1"/>
         <Image HorizontalAlignment="Left" Height="33" Margin="404,154,0,0" VerticalAlignment="Top" Width="36" Source="/images/starsolid.png" Grid.Column="1"/>

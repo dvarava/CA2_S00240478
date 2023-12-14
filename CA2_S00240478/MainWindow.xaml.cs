@@ -58,12 +58,44 @@ namespace CA2_S00240478
 
         private void lbxTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Team selected = lbxTeams.SelectedItem as Team;
+            Team selectedTeam = lbxTeams.SelectedItem as Team;
 
-            if (selected != null)
+            if (selectedTeam != null)
             {
-                lbxPlayers.ItemsSource = selected.Players;
+                lbxPlayers.ItemsSource = selectedTeam.Players;
             }
+        }
+
+        private void UpdateRecord(char result)
+        {
+            Player selectedPlayer = lbxPlayers.SelectedItem as Player;
+            if (selectedPlayer != null)
+            {
+                string updatedRecord = selectedPlayer.ResultRecord.Substring(1) + $"{result}";
+                selectedPlayer.ResultRecord = updatedRecord;
+            }
+
+            Team selectedTeam = lbxTeams.SelectedItem as Team;
+            if (selectedTeam != null)
+            {
+                lbxPlayers.ItemsSource = null;
+                lbxPlayers.ItemsSource = selectedTeam.Players;
+            }
+        }
+
+        private void btnWin_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateRecord('W');
+        }
+
+        private void btnLoss_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateRecord('L');
+        }
+
+        private void btnDraw_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateRecord('D');
         }
     }
 }
