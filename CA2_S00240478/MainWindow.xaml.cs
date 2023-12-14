@@ -32,25 +32,38 @@ namespace CA2_S00240478
             Team t2 = new Team() { Name = "Italy" };
             Team t3 = new Team() { Name = "Spain" };
 
-            //French players
+            // French players
             Player p1 = new Player() { Name = "Marie", ResultRecord = "WWDDL" };
             Player p2 = new Player() { Name = "Claude", ResultRecord = "DDDLW" };
             Player p3 = new Player() { Name = "Antoine", ResultRecord = "LWDLW" };
 
-            //Italian players
+            // Italian players
             Player p4 = new Player() { Name = "Marco", ResultRecord = "WWDLL" };
             Player p5 = new Player() { Name = "Giovanni", ResultRecord = "LLLLD" };
             Player p6 = new Player() { Name = "Valentina", ResultRecord = "DLWWW" };
 
-            //Spanish players
+            // Spanish players
             Player p7 = new Player() { Name = "Maria", ResultRecord = "WWWWW" };
             Player p8 = new Player() { Name = "Jose", ResultRecord = "LLLLL" };
             Player p9 = new Player() { Name = "Pablo", ResultRecord = "DDDDD" };
 
+            // Added players to teams
+            t1.Players = new List<Player> { p1, p2, p3 };
+            t2.Players = new List<Player> { p4, p5, p6 };
+            t3.Players = new List<Player> { p7, p8, p9 };
 
+            // Added teams to team listbox
+            lbxTeams.ItemsSource = new List<Team> { t1, t2, t3 };        
+        }
 
+        private void lbxTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Team selected = lbxTeams.SelectedItem as Team;
 
-            teamsLbx.ItemsSource = new List<Team> { t1, t2, t3 };        
+            if (selected != null)
+            {
+                lbxPlayers.ItemsSource = selected.Players;
+            }
         }
     }
 }

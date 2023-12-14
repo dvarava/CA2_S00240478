@@ -11,8 +11,8 @@
             <ColumnDefinition Width="39*"/>
             <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="teamsLbx" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="55,159,481,73" Grid.ColumnSpan="2"/>
-        <ListBox x:Name="playersLbx" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="74,159,150,73" Grid.Column="1"/>
+        <ListBox x:Name="lbxTeams" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="55,159,481,73" Grid.ColumnSpan="2" SelectionChanged="lbxTeams_SelectionChanged"/>
+        <ListBox x:Name="lbxPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="74,159,150,73" Grid.Column="1"/>
         <Label Content="Tiddlywinks World Cup" FontSize="30" HorizontalAlignment="Left" Margin="243,47,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label Content="Teams" HorizontalAlignment="Left" Margin="55,128,0,0" VerticalAlignment="Top"/>
         <Label Content="Players" HorizontalAlignment="Left" Margin="74,128,0,0" VerticalAlignment="Top" Grid.Column="1"/>
