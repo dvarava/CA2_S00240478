@@ -12,9 +12,23 @@ namespace CA2_S00240478
         public string Name { get; set; }
         public List<Player> Players { get; set; }
 
+        public int Points
+        {
+            get
+            {
+                int totalPoints = 0;
+                foreach (Player player in Players)
+                {
+                    totalPoints += player.Points;
+                }
+
+                return totalPoints;
+            }
+        }
+
         public override string ToString()
         {
-            return $"{Name}";
+            return $"{Name} - {Points}";
         }
     }
 }
