@@ -72,13 +72,62 @@ namespace CA2_S00240478
             }
         }
 
+        private void lbxPlayers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Player selectedPlayer = lbxPlayers.SelectedItem as Player;
+
+            if (selectedPlayer != null)
+            {
+                UpdatePlayerRating();
+            }
+        }
+
+        private void UpdatePlayerRating()
+        {
+            Player selectedPlayer = lbxPlayers.SelectedItem as Player;
+
+            BitmapImage starSolid = new BitmapImage(new Uri("/images/starsolid.png", UriKind.Relative));
+            BitmapImage starOutline = new BitmapImage(new Uri("/images/staroutline.png", UriKind.Relative));
+
+            if (selectedPlayer != null)
+            {
+                if (selectedPlayer.Points > 0 && selectedPlayer.Points <= 5)
+                {
+                    img1.Source = starSolid;
+                    img2.Source = starOutline;
+                    img3.Source = starOutline;
+                }
+                else if (selectedPlayer.Points > 5 && selectedPlayer.Points <= 10)
+                {
+                    img1.Source = starSolid;
+                    img2.Source = starSolid;
+                    img3.Source = starOutline;
+                }
+                else if (selectedPlayer.Points > 10 && selectedPlayer.Points <= 15)
+                {
+                    img1.Source = starSolid;
+                    img2.Source = starSolid;
+                    img3.Source = starSolid;
+                }
+                else
+                {
+                    img1.Source = starOutline;
+                    img2.Source = starOutline;
+                    img3.Source = starOutline;
+                }
+            }
+        }
+
         private void UpdateRecord(char result)
         {
             Player selectedPlayer = lbxPlayers.SelectedItem as Player;
+
             if (selectedPlayer != null)
             {
                 string updatedRecord = selectedPlayer.ResultRecord.Substring(1) + result;
                 selectedPlayer.ResultRecord = updatedRecord;
+
+                UpdatePlayerRating();
             }
 
             Team selectedTeam = lbxTeams.SelectedItem as Team;
