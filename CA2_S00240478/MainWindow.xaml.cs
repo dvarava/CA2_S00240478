@@ -20,6 +20,7 @@ namespace CA2_S00240478
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Team> Teams = new List<Team>();
         public MainWindow()
         {
             InitializeComponent();
@@ -48,12 +49,16 @@ namespace CA2_S00240478
             Player p9 = new Player() { Name = "Pablo", ResultRecord = "DDDDD" };
 
             // Added players to teams
+            
             t1.Players = new List<Player> { p1, p2, p3 };
+            Teams.Add(t1);
             t2.Players = new List<Player> { p4, p5, p6 };
+            Teams.Add(t2);
             t3.Players = new List<Player> { p7, p8, p9 };
+            Teams.Add(t3);
 
             // Added teams to team listbox
-            lbxTeams.ItemsSource = new List<Team> { t1, t2, t3 };        
+            lbxTeams.ItemsSource = Teams;        
         }
 
         private void lbxTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -71,7 +76,7 @@ namespace CA2_S00240478
             Player selectedPlayer = lbxPlayers.SelectedItem as Player;
             if (selectedPlayer != null)
             {
-                string updatedRecord = selectedPlayer.ResultRecord.Substring(1) + $"{result}";
+                string updatedRecord = selectedPlayer.ResultRecord.Substring(1) + result;
                 selectedPlayer.ResultRecord = updatedRecord;
             }
 
@@ -80,6 +85,10 @@ namespace CA2_S00240478
             {
                 lbxPlayers.ItemsSource = null;
                 lbxPlayers.ItemsSource = selectedTeam.Players;
+
+                lbxTeams.ItemsSource = null;
+                lbxTeams.ItemsSource = Teams;
+                lbxTeams.SelectedItem = selectedTeam;
             }
         }
 
