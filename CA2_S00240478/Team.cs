@@ -10,5 +10,7 @@ namespace CA2_S00240478
     {
         public string Name { get; set; }
         public List<Player> Players { get; set; }
+
+
     }
 }
