@@ -17,8 +17,8 @@
         <Button Content="Loss" Width="60" HorizontalAlignment="Left" Margin="701,313,0,0" VerticalAlignment="Top"/>
         <Button Content="Draw" Width="60" HorizontalAlignment="Left" Margin="701,349,0,0" VerticalAlignment="Top"/>
         <Label Content="Player Rating" HorizontalAlignment="Left" Margin="691,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="16.399,4.277"/>
-        <Image HorizontalAlignment="Left" Height="37" Margin="682,159,0,0" VerticalAlignment="Top" Width="30" Source="/starsolid.png"/>
-        <Image HorizontalAlignment="Left" Height="37" Margin="717,159,0,0" VerticalAlignment="Top" Width="30" Source="/starsolid.png"/>
-        <Image HorizontalAlignment="Left" Height="37" Margin="752,159,0,0" VerticalAlignment="Top" Width="30" Source="/staroutline.png"/>
+        <Image HorizontalAlignment="Left" Height="33" Margin="678,154,0,0" VerticalAlignment="Top" Width="36" Source="images/starsolid.png"/>
+        <Image HorizontalAlignment="Left" Height="33" Margin="716,154,0,0" VerticalAlignment="Top" Width="36" Source="/images/starsolid.png"/>
+        <Image HorizontalAlignment="Left" Height="33" Margin="754,154,0,0" VerticalAlignment="Top" Width="36" Source="/images/staroutline.png"/>
     </Grid>
 </Window>
